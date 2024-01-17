@@ -11,21 +11,21 @@ def get_bs_obj(page_url: str):
     except:
         return None
     else:
-        return BeautifulSoup(html.content, 'html.parser')
+        return BeautifulSoup(html.content, "html.parser")
 
 
 def get_volumes(url, year):
     bs_obj = get_bs_obj(url)
-    link_list = bs_obj.find_all('a', text=re.compile(".*" + str(year) + ".*"))
+    link_list = bs_obj.find_all("a", text=re.compile(".*" + str(year) + ".*"))
     hrefs = []
     for i in link_list:
-        hrefs.append(i.get('href'))
+        hrefs.append(i.get("href"))
     return hrefs
 
 
 def get_conf(main_page, year):
-    path = main_page[:main_page.rfind("/")]
-    conf = path[path.rfind("/"):]
+    path = main_page[: main_page.rfind("/")]
+    conf = path[path.rfind("/") :]
     return [path + conf + str(year) + ".html"]
 
 
@@ -75,5 +75,5 @@ def main():
                 get_info(a, f"journal/{journal_name}.csv", class_find, info)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
