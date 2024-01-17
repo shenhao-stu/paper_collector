@@ -22,7 +22,7 @@ def main():
 
     for page in pages:
         journal_name = page[0]
-        input_file = "journal/" + journal_name + ".csv"
+        input_file = "total/" + journal_name + ".csv"
 
         file = pd.read_csv(input_file, header=None)
         count = 0

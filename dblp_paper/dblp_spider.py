@@ -72,7 +72,7 @@ def main():
                     continue
                 repeat_url.add(a)
                 info = [year, ccf_rank, journal_name]
-                get_info(a, f"journal/{journal_name}.csv", class_find, info)
+                get_info(a, f"total/{journal_name}.csv", class_find, info)
 
 
 if __name__ == "__main__":
